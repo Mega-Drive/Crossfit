@@ -678,7 +678,10 @@ section
 {
 	background: #1d1f2a;
 	padding-top: 106px;
-	padding-bottom: 105px;
+}
+.feature_col
+{
+	margin-bottom: 96px;
 }
 .feature_icon
 {
@@ -717,9 +720,9 @@ section
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
-.feature_icon:hover svg path,
-.feature_icon:hover svg rect,
-.feature_icon:hover svg polygon
+.feature:hover .feature_icon svg path,
+.feature:hover .feature_icon svg rect,
+.feature:hover .feature_icon svg polygon
 {
 	fill: #ff9908;
 }
