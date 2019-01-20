@@ -8,10 +8,7 @@
 2. Set Header
 3. Init Menu
 4. Init Search
-5. Init Home Slider
-6. Init SVG
-7. Init Portfolio Slider
-8. Init Testimonial Slider
+5. Init SVG
 
 
 ******************************/
@@ -47,10 +44,7 @@ $(document).ready(function()
 
 	initMenu();
 	initSearch();
-	initHomeSlider();
 	initSvg();
-	initPortfolioSlider();
-	initTestSlider();
 
 	/* 
 
@@ -108,47 +102,7 @@ $(document).ready(function()
 
 	/* 
 
-	5. Init Home Slider
-
-	*/
-
-	function initHomeSlider()
-	{
-		if($('.home_slider').length)
-		{
-			var homeSlider = $('.home_slider');
-			homeSlider.owlCarousel(
-			{
-				items:1,
-				autoplay:true,
-				loop:true,
-				nav:false,
-				smartSpeed:1200
-			});
-
-			/* Custom dots events */
-			if($('.home_slider_custom_dot').length)
-			{
-				$('.home_slider_custom_dot').on('click', function()
-				{
-					$('.home_slider_custom_dot').removeClass('active');
-					$(this).addClass('active');
-					homeSlider.trigger('to.owl.carousel', [$(this).index(), 1200]);
-				});
-			}
-
-			/* Change active class for dots when slide changes by nav or touch */
-			homeSlider.on('changed.owl.carousel', function(event)
-			{
-				$('.home_slider_custom_dot').removeClass('active');
-				$('.home_slider_custom_dots li').eq(event.page.index).addClass('active');
-			});
-		}
-	}
-
-	/* 
-
-	6. Init SVG
+	5. Init SVG
 
 	*/
 
@@ -185,61 +139,6 @@ $(document).ready(function()
 				}, 'xml');
 			});
 		}	
-	}
-
-	/* 
-
-	7. Init Portfolio Slider
-
-	*/
-
-	function initPortfolioSlider()
-	{
-		if($('.portfolio_slider').length)
-		{
-			var portfoliSlider = $('.portfolio_slider');
-			portfoliSlider.owlCarousel(
-			{
-				items: 4,
-				loop: false,
-				autoplay: false,
-				smartSpeed: 1200,
-				dots: false,
-				nav: false,
-				margin: 20,
-				responsive:
-				{
-					0:{items:1},
-					768:{items:2},
-					992:{items:3},
-					1441:{items:4}
-				}
-			});
-		}
-	}
-
-	/* 
-
-	8. Init Testimonial Slider
-
-	*/
-
-	function initTestSlider()
-	{
-		if($('.test_slider').length)
-		{
-			var testSlider = $('.test_slider');
-			testSlider.owlCarousel(
-			{
-				items: 1,
-				loop: true,
-				autoplay: true,
-				autoplayHoverPause:true,
-				smartSpeed: 1200,
-				dots: false,
-				nav: false
-			});
-		}
 	}
 
 });
